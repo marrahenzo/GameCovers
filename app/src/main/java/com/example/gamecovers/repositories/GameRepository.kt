@@ -217,7 +217,7 @@ object GameRepository {
         return games.first { it.id == id }
     }
 
-    fun getGamesByNameContains(text: String): List<Game> {
-        return games.filter { it.name.contains(text, ignoreCase = true) }
+    fun getLastId(): Long {
+        return games.maxOf { it.id }
     }
 }
