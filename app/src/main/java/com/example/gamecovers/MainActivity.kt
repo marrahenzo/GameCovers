@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CenterAlignedTopAppBar
@@ -84,18 +85,20 @@ fun GameInfo(title: String, developer: String, releaseDate: String, modifier: Mo
 fun NavButtons(onBackPress: () -> Unit, onNextPress: () -> Unit, modifier: Modifier = Modifier) {
     Row(
         modifier = modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.SpaceEvenly,
+        horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
     ) {
         Button(
             onClick = onBackPress,
-            colors = ButtonDefaults.buttonColors(Color(0xFF2C002E), Color.White)
+            colors = ButtonDefaults.buttonColors(Color(0xFF2C002E), Color.White),
+            modifier = modifier.width(30.dp).padding(start = 10.dp, end = 10.dp)
         ) {
             Text(text = "Back")
         }
         Button(
             onClick = onNextPress,
-            colors = ButtonDefaults.buttonColors(Color(0xFF5E3361), Color.White)
+            colors = ButtonDefaults.buttonColors(Color(0xFF5E3361), Color.White),
+            modifier = modifier.width(30.dp).padding(end = 10.dp, start = 10.dp)
         ) {
             Text(text = "Next")
         }
